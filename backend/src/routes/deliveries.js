@@ -20,7 +20,7 @@ router.get('/', authGuard, async (req, res) => {
   const { status } = req.query;
   const deliveries = await prisma.operation.findMany({
     where: { type: 'delivery', ...(status && { status }) },
-    include: { lines: { include: { product: true } } },
+    include: { lines: true },
     orderBy: { createdAt: 'desc' },
   });
   res.json(deliveries);
@@ -30,7 +30,7 @@ router.get('/', authGuard, async (req, res) => {
 router.post('/', authGuard, async (req, res) => {
   const result = deliverySchema.safeParse(req.body);
   if (!result.success) {
-    const errors = result.error.errors.map(e => ({ field: e.path.join('.'), message: e.message }));
+    const errors = result.error.issues.map(e => ({ field: e.path.join('.'), message: e.message }));
     return res.status(400).json({ errors });
   }
 
@@ -65,7 +65,7 @@ router.post('/', authGuard, async (req, res) => {
         })),
       },
     },
-    include: { lines: { include: { product: true } } },
+    include: { lines: true },
   });
 
   res.status(201).json(delivery);
@@ -115,7 +115,7 @@ router.patch('/:id/validate', authGuard, async (req, res) => {
   const updated = await prisma.operation.update({
     where: { id },
     data: { status: 'done' },
-    include: { lines: { include: { product: true } } },
+    include: { lines: true },
   });
 
   res.json(updated);

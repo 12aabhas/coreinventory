@@ -16,7 +16,7 @@ const adjustmentSchema = z.object({
 router.get('/', authGuard, async (req, res) => {
   const adjustments = await prisma.operation.findMany({
     where: { type: 'adjustment' },
-    include: { lines: { include: { product: true } } },
+    include: { lines: true },
     orderBy: { createdAt: 'desc' },
   });
   res.json(adjustments);
@@ -26,7 +26,7 @@ router.get('/', authGuard, async (req, res) => {
 router.post('/', authGuard, async (req, res) => {
   const result = adjustmentSchema.safeParse(req.body);
   if (!result.success) {
-    const errors = result.error.errors.map(e => ({ field: e.path[0], message: e.message }));
+    const errors = result.error.issues.map(e => ({ field: e.path[0], message: e.message }));
     return res.status(400).json({ errors });
   }
 
@@ -63,7 +63,7 @@ router.post('/', authGuard, async (req, res) => {
         create: [{ productId, quantity: countedQuantity, toLocationId: locationId }],
       },
     },
-    include: { lines: { include: { product: true } } },
+    include: { lines: true },
   });
 
   // Log to ledger
