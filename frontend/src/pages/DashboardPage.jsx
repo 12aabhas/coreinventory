@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getDashboard } from '../api/dashboard';
+import LowStockBanner from '../components/LowStockBanner';
 
 function KpiCard({ label, value, color = 'var(--color-gray-800)' }) {
   return (
@@ -27,6 +28,10 @@ export default function DashboardPage() {
   return (
     <div>
       <h1 style={{ fontSize: '22px', fontWeight: '700', marginBottom: '24px' }}>Dashboard</h1>
+
+      {/* Low Stock Alert Banner */}
+      <LowStockBanner />
+
       {loading ? (
         <p style={{ color: 'var(--color-gray-400)' }}>Loading...</p>
       ) : (
