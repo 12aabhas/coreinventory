@@ -9,64 +9,14 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
   font-size: 14px;
-  color: var(--light-text);
-  background: #0A0F1E;
+  color: var(--color-gray-800);
+  background: var(--color-gray-50);
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+button { cursor: pointer; }
+input, select, textarea { font-family: inherit; }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(37, 99, 235, 0.6); }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #1E293B;
-  border-radius: var(--radius-full);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #475569;
-  border-radius: var(--radius-full);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
-}
-
-/* Utility Classes */
-.glass {
-  background: rgba(17, 25, 40, 0.75);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-.gradient-border {
-  position: relative;
-  border: double 1px transparent;
-  border-radius: var(--radius-lg);
-  background-image: linear-gradient(#0A0F1E, #0A0F1E), 
-                    linear-gradient(135deg, #2563eb, #7c3aed);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }

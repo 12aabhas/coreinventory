@@ -1,59 +1,28 @@
 :root {
-  /* Primary Colors - More vibrant for dark theme */
-  --color-primary: #3b82f6;
-  --color-primary-dark: #2563eb;
-  --color-primary-light: #60a5fa;
-  --color-primary-soft: rgba(59, 130, 246, 0.1);
-  
+  --color-primary: #6366f1;
+  --color-primary-dark: #4f46e5;
+  --color-primary-light: #e0e7ff;
   --color-success: #10b981;
   --color-warning: #f59e0b;
   --color-danger: #ef4444;
-  --color-info: #8b5cf6;
-  
-  /* Dark Theme Colors - Premium Dark */
-  --dark-bg: #0A0F1E;
-  --dark-surface: #111928;
-  --dark-surface-2: #1E293B;
-  --dark-surface-3: #2D3748;
-  --dark-text: #FFFFFF;
-  --dark-text-soft: #94A3B8;
-  --dark-border: rgba(255,255,255,0.1);
-  
-  /* Light Theme Colors (kept for reference) */
-  --light-bg: #f8fafc;
-  --light-surface: #ffffff;
-  --light-text: #0f172a;
-  --light-text-soft: #64748b;
-  
-  /* Gradients - More dramatic */
-  --gradient-primary: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  --gradient-primary-strong: linear-gradient(135deg, #2563eb, #7c3aed);
-  --gradient-success: linear-gradient(135deg, #10b981, #34d399);
-  --gradient-warning: linear-gradient(135deg, #f59e0b, #fbbf24);
-  --gradient-danger: linear-gradient(135deg, #ef4444, #f87171);
-  
-  /* Layout */
-  --sidebar-width: 280px;
-  --topbar-height: 70px;
-  
-  /* Border Radius - More premium */
-  --radius-sm: 8px;
-  --radius-md: 12px;
+  --color-info: #3b82f6;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --sidebar-width: 260px;
+  --topbar-height: 64px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
   --radius-lg: 16px;
   --radius-xl: 24px;
-  --radius-2xl: 32px;
-  --radius-full: 9999px;
-  
-  /* Shadows - Deeper for dark theme */
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.3);
-  --shadow-md: 0 4px 6px rgba(0,0,0,0.4);
-  --shadow-lg: 0 10px 15px rgba(0,0,0,0.5);
-  --shadow-xl: 0 20px 25px rgba(0,0,0,0.6);
-  --shadow-2xl: 0 25px 50px rgba(0,0,0,0.7);
-  
-  /* Transitions */
-  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
 }

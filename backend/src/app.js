@@ -9,6 +9,12 @@ const productRoutes = require('./routes/products');
 const dashboardRoutes = require('./routes/dashboard');
 const warehouseRoutes = require('./routes/warehouses');
 const categoryRoutes = require('./routes/categories');
+const receiptRoutes = require('./routes/receipts');
+const deliveryRoutes = require('./routes/deliveries');
+const transferRoutes = require('./routes/transfers');
+const adjustmentRoutes = require('./routes/adjustments');
+const moveHistoryRoutes = require('./routes/moveHistory');
+const alertRoutes = require('./routes/alerts');
 
 const app = express();
 
@@ -22,6 +28,12 @@ app.use('/products', productRoutes);
 app.use('/dashboard', dashboardRoutes);
 app.use('/warehouses', warehouseRoutes);
 app.use('/categories', categoryRoutes);
+app.use('/receipts', receiptRoutes);
+app.use('/deliveries', deliveryRoutes);
+app.use('/transfers', transferRoutes);
+app.use('/adjustments', adjustmentRoutes);
+app.use('/move-history', moveHistoryRoutes);
+app.use('/alerts', alertRoutes);
 
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
 
