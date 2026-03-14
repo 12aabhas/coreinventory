@@ -28,10 +28,7 @@ export default function DashboardPage() {
   return (
     <div>
       <h1 style={{ fontSize: '22px', fontWeight: '700', marginBottom: '24px' }}>Dashboard</h1>
-
-      {/* Low Stock Alert Banner */}
       <LowStockBanner />
-
       {loading ? (
         <p style={{ color: 'var(--color-gray-400)' }}>Loading...</p>
       ) : (
@@ -40,6 +37,7 @@ export default function DashboardPage() {
           <KpiCard label="Low Stock" value={data?.lowStock} color="var(--color-warning)" />
           <KpiCard label="Out of Stock" value={data?.outOfStock} color="var(--color-danger)" />
           <KpiCard label="Pending Receipts" value={data?.pendingReceipts} color="var(--color-info)" />
+          <KpiCard label="Pending Deliveries" value={data?.pendingDeliveries} color="var(--color-primary)" />
         </div>
       )}
     </div>
