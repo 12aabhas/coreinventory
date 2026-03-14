@@ -7,6 +7,8 @@ const morgan = require('morgan');
 const authRoutes = require('./routes/auth');
 const productRoutes = require('./routes/products');
 const dashboardRoutes = require('./routes/dashboard');
+const warehouseRoutes = require('./routes/warehouses');
+const categoryRoutes = require('./routes/categories');
 
 const app = express();
 
@@ -18,6 +20,8 @@ app.use(express.json());
 app.use('/auth', authRoutes);
 app.use('/products', productRoutes);
 app.use('/dashboard', dashboardRoutes);
+app.use('/warehouses', warehouseRoutes);
+app.use('/categories', categoryRoutes);
 
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
 
